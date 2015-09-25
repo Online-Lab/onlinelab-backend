@@ -2,6 +2,7 @@ django<1.9
 gunicorn
 dj-database-url
 dj-static
+django-wysiwyg-redactor
 djangorestframework
 markdown
 psycopg2

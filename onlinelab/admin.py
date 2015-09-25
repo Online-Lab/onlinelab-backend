@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals, absolute_import
 from django.contrib import admin
+from django.db import models
+from redactor.widgets import RedactorEditor
 from .models import Post, Project
 
 
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-    pass
+class EditorAdmin(admin.ModelAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': RedactorEditor}
+    }
 
 
-@admin.register(Project)
-class ProjectAdmin(admin.ModelAdmin):
-    pass
+admin.site.register(Post, EditorAdmin)
+admin.site.register(Project, EditorAdmin)

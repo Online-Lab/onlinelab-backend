@@ -42,6 +42,7 @@ INSTALLED_APPS = (
 INSTALLED_APPS += (
     'rest_framework',
     'any_imagefield',
+    'redactor',
     'onlinelab',
 )
 
@@ -132,6 +133,11 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+# REDACTOR
+
+REDACTOR_OPTIONS = {'lang': 'ru'}
+REDACTOR_UPLOAD = 'uploads/'
 
 try:
     from settings_local import *
