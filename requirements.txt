@@ -1,6 +1,8 @@
 django<1.9
 djangorestframework
-ipython
 psycopg2
+django-any-imagefield
+pillow
+ipython
 pytest
 django-pytest
