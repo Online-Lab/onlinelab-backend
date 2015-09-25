@@ -140,6 +140,16 @@ REST_FRAMEWORK = {
 REDACTOR_OPTIONS = {'lang': 'ru'}
 REDACTOR_UPLOAD = 'uploads/'
 
+# Raven
+
+RAVEN_CONFIG = {
+    'dsn': 'http://2d2b39bd2d0b494e9f5ce96522aaed38:c5ecff32df9c451f9acb361a0ca7f219@sentry.online-lab.ru/6',
+}
+
+INSTALLED_APPS += (
+    'raven.contrib.django.raven_compat',
+)
+
 try:
     from settings_local import *
 except ImportError:
