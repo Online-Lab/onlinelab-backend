@@ -1,3 +1,4 @@
 *.pyc
 main/settings_local.py
 media/
+staticfiles/
