@@ -82,13 +82,23 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'onlinelab',
+        'USER': 'onlinelab',
+        'PASSWORD': 'onlinelab',
+        'HOST': 'localhost',
+        'PORT': '',
+        'TEST': {
+            'NAME': 'onlinelab_test'
+        }
     }
 }
 
+
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+db_config = dj_database_url.config()
+if db_config:
+    DATABASES['default'] = db_config
 
 
 # Internationalization
@@ -122,3 +132,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+try:
+    from settings_local import *
+except ImportError:
+    pass
