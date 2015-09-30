@@ -41,6 +41,7 @@ INSTALLED_APPS = (
 
 INSTALLED_APPS += (
     'rest_framework',
+    'corsheaders',
     'any_imagefield',
     'redactor',
     'onlinelab',
@@ -48,6 +49,7 @@ INSTALLED_APPS += (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -149,6 +151,8 @@ RAVEN_CONFIG = {
 INSTALLED_APPS += (
     'raven.contrib.django.raven_compat',
 )
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 try:
     from settings_local import *

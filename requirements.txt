@@ -4,6 +4,7 @@ dj-database-url
 dj-static
 django-wysiwyg-redactor
 djangorestframework
+django-cors-headers
 markdown
 psycopg2
 django-any-imagefield
