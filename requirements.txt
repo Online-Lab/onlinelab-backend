@@ -5,6 +5,7 @@ dj-static
 django-wysiwyg-redactor
 djangorestframework
 django-cors-headers
+django-filter
 markdown
 psycopg2
 django-any-imagefield
